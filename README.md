@@ -1,4 +1,7 @@
-Pass an array of hexidecimal RGB color values to the object, and the object will use those colors as goalposts and return an array of interpolated colors.
+## Color Interpolator
 
-ci = new ColorInterpolator(['f00', '0f0', '000', 'ff0']);
+Pass an array of hexidecimal RGB color values to the ColorInterpolator, and it will use those colors as goalposts and return an array of interpolated colors between them.
+
+ci = new ColorInterpolator(['#f00', '#ccdd43', 0f0', '000', '#ff0']);
+
 colors = ci.interpolate(20);

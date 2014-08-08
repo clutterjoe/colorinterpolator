@@ -15,7 +15,7 @@ var ColorInterpolator = function(goalposts) {
       } : null;
     }
 
-    for(i = 0; i < colorsHex.length; i++) {
+    for (i = 0; i < colorsHex.length; i++) {
       c = colorsHex[i];
       c = c.toLowerCase();
       if (c.substr(0, 1) === '#') {
@@ -38,7 +38,7 @@ var ColorInterpolator = function(goalposts) {
       var hex = c.toString(16);
       return hex.length == 1 ? "0" + hex : hex;
     }
-    for(var i = 0; i < colorsRGB.length; i++) {
+    for (var i = 0; i < colorsRGB.length; i++) {
       colorsHex[i] = "#" + componentToHex(colorsRGB[i].r) + componentToHex(colorsRGB[i].g) + componentToHex(colorsRGB[i].b);
     }
   return colorsHex;
@@ -87,7 +87,7 @@ var ColorInterpolator = function(goalposts) {
     // if the number of colors is less than the number of goalposts, return the
     // goalposts in order.
     if (number_of_colors <= this.goalposts.length) {
-      for(var i = 0; i < number_of_colors; i++) {
+      for (var i = 0; i < number_of_colors; i++) {
         colors[i] = translateColorsToHex([this.goalposts[i]])[0];
       }
     }
@@ -101,7 +101,7 @@ var ColorInterpolator = function(goalposts) {
       else {
         var steps = Math.ceil((number_of_colors - goalposts.length) / (goalposts.length - 1));
       }
-      while(goalposts.length > 1) {
+      while (goalposts.length > 1) {
         colors[colors.length] = translateColorsToHex([goalposts[0]])[0];
         if (goalposts.length === 2) {
           steps = number_of_colors - (colors.length + 1);
@@ -111,7 +111,7 @@ var ColorInterpolator = function(goalposts) {
           var gpEnd = goalposts[1];
         }
         var colorsInterpolated = interpolateGoalposts(gpStart, gpEnd, steps);
-        for(var i = 0; i < colorsInterpolated.length; i++) {
+        for (var i = 0; i < colorsInterpolated.length; i++) {
           colors[colors.length] = translateColorsToHex([colorsInterpolated[i]])[0];
         }
         goalposts.splice(0, 1);
